@@ -1,0 +1,9 @@
+def all_elements_same(t):
+    return all(x == t[0] for x in t)
+
+# Contoh penggunaan
+tA = (90, 90, 90, 90)
+print(all_elements_same(tA))  # Output: True
+
+tB = (90, 90, 90, 80)
+print(all_elements_same(tB))  # Output: False
