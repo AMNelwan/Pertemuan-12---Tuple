@@ -1,0 +1,29 @@
+# Fungsi untuk menghitung distribusi jam dari file email
+def hitung_distribusi_jam(nama_file):
+    try:
+        # Membuka file
+        with open(nama_file, 'r') as file:
+            jam_dict = {}
+            
+            for baris in file:
+                # Mencari baris yang dimulai dengan "From "
+                if baris.startswith("From "):
+                    bagian = baris.split()
+                    if len(bagian) > 5:
+                        waktu = bagian[5]
+                        jam = waktu.split(':')[0]
+                        # Menghitung frekuensi setiap jam
+                        jam_dict[jam] = jam_dict.get(jam, 0) + 1
+            
+            # Mengurutkan jam secara numerik
+            for jam in sorted(jam_dict.keys()):
+                print(jam, jam_dict[jam])
+    
+    except FileNotFoundError:
+        print("File tidak ditemukan:", nama_file)
+
+# Meminta nama file dari pengguna
+nama_file = input("Enter a file name: ")
+
+# Memanggil fungsi untuk menghitung distribusi jam
+hitung_distribusi_jam(nama_file)
