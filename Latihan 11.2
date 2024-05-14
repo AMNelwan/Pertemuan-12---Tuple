@@ -1,0 +1,19 @@
+# Data diri dalam bentuk tuple
+data = ('ChatGPT OpenAI', '00000001', 'Virtual World')
+
+nama, nim, alamat = data
+
+nim_tuple = tuple(nim)
+
+nama_depan = tuple(nama.split()[0].lower())
+
+nama_terbalik = tuple(nama.split()[::-1])
+
+# Menampilkan hasil sesuai format yang diminta
+print("Data: ", data)
+print("NIM    : ", nim)
+print("NAMA   : ", nama)
+print("ALAMAT : ", alamat)
+print("NIM: ", nim_tuple)
+print("NAMA DEPAN: ", nama_depan)
+print("NAMA TERBALIK: ", nama_terbalik)
